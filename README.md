@@ -1,37 +1,21 @@
-# React-Redux-Tetris
+# React-Redux 俄罗斯方块
 
-[English](README.md) | [中文](README_cn.md)
+React-Redux-Tetris 是一个使用 React 和 Redux 构建的俄罗斯方块游戏，旨在展示如何使用 Redux 与 React 一起构建游戏。
+参考项目：https://www.freecodecamp.org/chinese/news/build-tetris-game-with-react-and-redux-tool-kit/
 
-React-Redux-Tetris is a Tetris game built with React and Redux. It is designed to showcase how to use Redux with React to build a game.
+- 经典的俄罗斯方块游戏玩法
+- 使用 Redux Tool Kit 管理游戏状态
+- 使用 Redux Persist 存储特定状态
 
-## Demo
+## 演示
 
-You can play the game here: [https://papayahuang.github.io/react-redux-tetris/](https://papayahuang.github.io/react-redux-tetris/)
+你可以在这里玩游戏：[https://zhanghaer.github.io/react-redux-tetris/](https://zhanghaer.github.io/react-redux-tetris/)
 
-![GIF](https://raw.githubusercontent.com/PapayaHUANG/images/main/img/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%88%B62023-02-28-14.36.54.gif)
-
-![display](https://raw.githubusercontent.com/PapayaHUANG/images/main/img/%E6%88%AA%E5%B1%8F2023-02-27%2021.25.49.png)
-
-## Features
-
-- Classic Tetris gameplay
-- Uses Redux Tool Kit to manage game state
-- Uses Redux Persist to store state
-
-## Installation
-
-To run the game locally, clone the repository and install the dependencies:
+## 安装
 
 ```bash
-git clone https://github.com/PapayaHUANG/react-redux-tetris.git
+git clone https://github.com/zhanghaer/react-redux-tetris.git
 cd react-redux-tetris
 npm install
+npm start
 ```
-
-## Contributing
-
-Contributions are welcome! If you find a bug or have a feature request, please open an issue. If you want to contribute code, please fork the repository and create a pull request.
-
-## License
-
-React-Redux-Tetris is open source software [licensed as MIT](./LICENSE).
