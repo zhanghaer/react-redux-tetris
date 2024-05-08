@@ -72,7 +72,6 @@ function App() {
               <p>{i18n.next[lan]}</p>
               <Next />
               <div className={style.bottom}>
-                {/* <Music data={this.props.music} /> */}
                 <Pause />
                 <Number time />
               </div>
