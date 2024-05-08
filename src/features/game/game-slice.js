@@ -35,8 +35,17 @@ const gameSlice = createSlice({
       }
     },
     moveDown: (state) => {
-      const { shape, board, x, y, rotation, nextShape, score, isRunning } =
-        state;
+      const {
+        shape,
+        board,
+        x,
+        y,
+        rotation,
+        nextShape,
+        score,
+        isRunning,
+        completedRows,
+      } = state;
       const maybeY = y + 1;
       if (canMoveTo(shape, board, x, maybeY, rotation)) {
         state.y = maybeY;
@@ -53,8 +62,9 @@ const gameSlice = createSlice({
           state.board = newBoard;
           state.shape = nextShape;
           state.nextShape = randomShape();
-
-          state.score = score + checkRows(newBoard);
+          const checkRowsObj = checkRows(newBoard);
+          state.score = score + checkRowsObj.point;
+          state.completedRows = completedRows + checkRowsObj.completedRows;
           state.isRunning = isRunning;
           state.x = 5;
           state.y = -4;
@@ -68,10 +78,19 @@ const gameSlice = createSlice({
     pause: (state) => {
       state.isRunning = false;
     },
-
+    start: (state) => {
+      return {
+        ...initialState,
+        isRunning: true,
+        gameOver: false,
+        highestScore: state.highestScore,
+      };
+    },
     restart: (state) => {
       return {
         ...initialState,
+        gameOver: true,
+        isRunning: false,
         highestScore: state.highestScore,
       };
     },
@@ -94,6 +113,7 @@ export const {
   gameOver,
   restart,
   setScore,
+  start,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

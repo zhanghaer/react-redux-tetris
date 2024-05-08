@@ -3,7 +3,8 @@ const random = (min, max) => {
 };
 
 export const boardDefault = () => {
-  const rows = 18;
+  // const rows = 18;
+  const rows = 20;
   const cols = 10;
   const array = Array.from(Array(rows), () => Array(cols).fill(0));
 
@@ -169,11 +170,12 @@ export const defaultState = () => {
     x: 5,
     y: -4,
     nextShape: randomShape(),
-    isRunning: true,
+    isRunning: false,
     score: 0,
     speed: 500,
-    gameOver: false,
+    gameOver: true,
     highestScore: 0,
+    completedRows: 0,
   };
 };
 
@@ -243,5 +245,5 @@ export const checkRows = (board) => {
       board.unshift(Array(10).fill(0));
     }
   }
-  return points[completedRows];
+  return { point: points[completedRows], completedRows };
 };
